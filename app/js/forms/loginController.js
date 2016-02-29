@@ -15,7 +15,7 @@
 			var uname = $scope.uname;
 			var pwd = $scope.pwd;					
 			 if(uname.length && pwd.length) {
-			 	$http.post('http://localhost:3000/api/users ',  {name: uname, password: pwd}).then(function(res) {		
+			 	$http.post('https://diaryforme.herokuapp.com/api/users ',  {name: uname, password: pwd}).then(function(res) {		
 			 		alert("saved Succesfully") 		;
 					$scope.resetLogin();
 				});
