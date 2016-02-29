@@ -1,16 +1,5 @@
 	var app = angular.module("test_angular", ["app.controller", "ngRoute"]);
 	
-	// app.config(function($routeProvider) {
-	// 	$routeProvider
-	// 		.when("/", {
-	// 			templateUrl: "forms/loginForm.html",
-	// 			controller: "loginController"
-	// 		})
-	// 		.otherwise({
-	// 			redirectTo: "/"
-	// 		})
-	// });
-
 	app.config(function($locationProvider, $routeProvider) {
 	  $locationProvider.html5Mode({
 		  enabled: true,
@@ -20,6 +9,10 @@
 		.when("/", {
 			templateUrl: "forms/loginForm.html",
 			controller: "loginController"
+		})
+		.when("/diary", {
+			templateUrl: "forms/diary.html",
+			controller: "diaryController"
 		})
 		.otherwise({
 			redirectTo: "/"
