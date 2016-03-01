@@ -1,6 +1,4 @@
-	var app = angular.module("app.controller", []);
-
-	app.controller("loginController", ["$scope", "$http", "$location", function($scope, $http, $location) {		
+	app.controller("loginController", ["$scope", "$http", "navigate",function($scope, $http, navigate) {		
 		$scope.uname = "";
 		$scope.pwd = '';
 
@@ -17,7 +15,9 @@
 			 		alert("saved Succesfully");
 					$scope.resetLogin();
 					debugger;
-					$location.path("/diary");
+					// $location.path("/diary");
+					navigate.go("/diary");
+					debugger;
 
 				});
 			}
