@@ -1,4 +1,4 @@
-	app.controller("loginController", ["$scope", "$http", "navigate",function($scope, $http, navigate) {		
+	app.controller("loginController", ["$scope", "$http", "navigator",function($scope, $http, navigator) {		
 		$scope.uname = "";
 		$scope.pwd = '';
 
@@ -14,11 +14,7 @@
 			 	$http.post('https://diaryforme.herokuapp.com/api/users',  {name: uname, password: pwd}).then(function(res) {		
 			 		alert("saved Succesfully");
 					$scope.resetLogin();
-					debugger;
-					// $location.path("/diary");
-					navigate.go("/diary");
-					debugger;
-
+					navigator.go("/diary");
 				});
 			}
 		};
