@@ -1,6 +1,16 @@
-	app.controller("loginController", ["$scope", "$http", "navigator",function($scope, $http, navigator) {		
+	app.controller("loginController", ["$scope","navigator", "servicecalls", function($scope, navigator, servicecalls) {		
+		
 		$scope.uname = "";
 		$scope.pwd = '';
+
+		function onloginSuccess(res) {
+			alert("saved Succesfully");
+			$scope.resetLogin();
+			navigator.go("/diary");
+		}
+
+		function onError(res) {
+		}
 
 		$scope.resetLogin = function() {
 			$scope.uname = "";
@@ -10,12 +20,8 @@
 		$scope.login = function() {
 			var uname = $scope.uname;
 			var pwd = $scope.pwd;					
-			 if(uname.length && pwd.length) {
-			 	$http.post('https://diaryforme.herokuapp.com/api/users',  {name: uname, password: pwd}).then(function(res) {		
-			 		alert("saved Succesfully");
-					$scope.resetLogin();
-					navigator.go("/diary");
-				});
+			 if(uname.length && pwd.length) {			 
+				servicecalls.requestService("add_user", {name: uname, password: pwd}).then(onloginSuccess, onError);
 			}
 		};
 	}]);
