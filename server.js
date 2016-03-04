@@ -34,13 +34,20 @@ app.get("/", function(req, res) {
 var router = express.Router();
 router.route("/users")
 	.get(function(req, res) {
-		Users.find(function(err, users) {
+
+		var params = {
+			name : req.query.name,
+			password : req.query.password
+		}
+		
+		Users.find(params, function(err, users) {
 			if(err) {
 				res.send(err);
 			}
 			res.json(users);
 		})
 	})
+	
 	.post(function(req, res) {
 		var user = new Users();
 		user.name = req.body.name;

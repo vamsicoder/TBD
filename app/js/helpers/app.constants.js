@@ -9,6 +9,11 @@ app.factory("applicationConsts", ["$location", function($location) {
 		url: _baseUrl + _api + "/users"
 	};
 
+	_services["login_user"] = {
+		method: "get",
+		url: _baseUrl + _api + "/users"
+	}
+
 	exports.services = _services;
 
 	Object.freeze(exports);

@@ -1,10 +1,20 @@
 body {
 	padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #eee;    
+    background-color: #eee;        
 }
 
-.login_container {
+body a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login_page .login_container, .signUp_page .signUp_container {
     width: 30%;
 	padding-top: 10%;
+	padding-bottom: 10%;
+}
+
+.login_page .form-fields, .signUp_page .form-fields {
+	margin-bottom: 10px;
 }

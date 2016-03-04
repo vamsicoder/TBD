@@ -1,12 +1,20 @@
 <!-- Login file -->
-<div ng-controller="loginController">	
+<div ng-controller="loginController" class="login_page">	
 	<div class="container login_container">
-      <form class="form-signin" name="loginForm" novalidate="">
-        <label for="user" class="sr-only">User name</label>
-        <input type="text" id="user" ng-model="uname" class="form-control" placeholder="User name" required="" autofocus="" >
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" ng-model="pwd" placeholder="Password" required="">       
-        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Sign in</button>
-      </form>
+
+		<form class="form-signin" name="loginForm" novalidate="">
+			<label for="user" class="sr-only">User name</label>
+			<input type="text" id="user" ng-model="uname" class="form-control form-fields" placeholder="User name" required="" autofocus="" >
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" id="inputPassword" class="form-control form-fields" ng-model="pwd" placeholder="Password" required="">       
+			<button class="btn btn-primary btn-block form-fields" type="submit" ng-click="login()">Sign in</button>
+		</form>
+
+		<a class="forgot_pwd pull-right"> Forgot Password</a>
+
+		<div class="sign_up_cntr">
+		<a class="signUp" ng-click="signUp()">  Click here </a> to Register
+		</div>    
     </div>
+    
 </div>

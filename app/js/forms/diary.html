@@ -1,2 +1,8 @@
 <!-- Add the logic for diary in this file -->
-<h1 ng-controller="diaryController"> {{message}}</h1>
+<div ng-controller="diaryController"> 
+	
+	<h1> Create a Note </h1>
+	<textarea ng-model="diary" placeholder="Enter Notes"></textarea>
+	<button class="btn btn-default" ng-click="saveNote()"> Save </button>
+	<button class="btn btn-default" ng-click="resetNote()"> Clear	 </button>
+</div>

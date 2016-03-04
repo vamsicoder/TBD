@@ -15,6 +15,10 @@ app.config(function($locationProvider, $routeProvider) {
 		templateUrl: "forms/diary.html",
 		controller: "diaryController"
 	})
+	.when("/signUp", {
+		templateUrl: "forms/signUpForm.html",
+		controller: "signUpController"
+	})
 	.otherwise({
 		redirectTo: "/"
 	})

@@ -1,0 +1,21 @@
+<!-- Sign Up file -->
+<div ng-controller="signUpController" class="signUp_page">	
+	<div class="container signUp_container">
+
+		<form class="form-signUp" name="signUpForm" novalidate="">
+
+			<label for="user" class="sr-only">User name</label>
+			<input type="text" id="user" ng-model="uname" class="form-control form-fields" placeholder="User name" required="" autofocus="" >
+
+			<label for="email" class="sr-only">Email Id</label>
+			<input type="text" id="email" ng-model="email" class="form-control form-fields" placeholder="Email ID" required="" autofocus="" >
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" id="inputPassword" class="form-control form-fields" ng-model="pwd" placeholder="Password" required="">
+
+
+			<button class="btn btn-primary btn-block form-fields" type="submit" ng-click="register()">Sign Up</button>
+		</form>
+		
+    </div>
+    
+</div>
